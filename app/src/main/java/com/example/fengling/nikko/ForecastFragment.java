@@ -242,7 +242,7 @@ public class ForecastFragment extends Fragment {
                         .appendQueryParameter(DAYS_PARAM, Integer.toString(numDays))
                         .appendQueryParameter(APPID_PARAM, BuildConfig.OPEN_WEATHER_MAP_API_KEY)
                         .build();
-
+                //.appendQueryParameter(APPID_PARAM, getResources().getString(R.string.OPEN_WEATHER_MAP_API_KEY))
                 URL url = new URL(builtUri.toString());
 
                 Log.v(LOG_TAG, "Built URI " + builtUri.toString());
@@ -312,7 +312,7 @@ public class ForecastFragment extends Fragment {
                 for(String dayForecastStr : result) {
                     mForecastAdapter.add(dayForecastStr);
                 }
-                // New data is back from the server.  Hooray!
+                // New data is back from the server.
             }
         }
     }
